@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gridiron Pulse | Weekly Fantasy</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/slots.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="brand"><span>◈</span><strong>GRIDIRON<br />PULSE</strong></div>
+        <div class="badge">WEEKLY FANTASY · NFL</div>
+        <div id="coin-display" class="coin-display">◉ 0 coins</div>
+        <button id="home-button" class="quiet-button">Reset Demo</button>
+      </header>
+
+      <section id="home-screen" class="home-screen">
+        <p class="eyebrow">WEEKLY FANTASY</p><h1>Build. Draft. Win coins.</h1>
+        <p class="home-lede">Collect your starter coins, enter the weekly contest, and draft a five-player fantasy team under budget.</p>
+        <div class="home-grid">
+          <article class="home-card"><p class="eyebrow">STARTER REWARD</p><h2>100 coins</h2><p>Collect your one-time starter balance to enter this week’s fantasy draft.</p><button id="collect-button" class="primary-button">Collect 100 Coins</button></article>
+          <article class="home-card"><p class="eyebrow">WEEKLY ENTRY</p><h2>50 coins</h2><p>Enter a five-team snake draft. Each manager begins with a separate $1,000 player budget.</p><button id="enter-button" class="primary-button">Enter Weekly Draft · 50 Coins</button></article>
+          <article class="home-card payout-card"><p class="eyebrow">WEEKLY PAYOUTS</p><div class="payout-row"><b>1st place</b><span>200 coins</span></div><div class="payout-row"><b>2nd place</b><span>100 coins</span></div><div class="payout-row"><b>3rd place</b><span>50 coins</span></div><p class="tiny-note">Five total managers compete: you and four bots. Results are determined after the week’s games are complete.</p></article>
+        </div>
+      </section>
+
+      <section id="draft-screen" hidden>
+        <section class="draft-intro"><div><p class="eyebrow">5-TEAM SNAKE DRAFT</p><h1>Build your team.</h1><p>Stay under the $1,000 roster budget. Higher projected points cost more.</p></div><div id="turn-card" class="turn-card"></div></section>
+        <p id="message" class="message" aria-live="polite"></p>
+        <nav class="draft-tabs" aria-label="Draft views"><button class="draft-tab active" data-draft-tab="pick">Pick Players</button><button class="draft-tab" data-draft-tab="teams">Teams So Far</button><button class="draft-tab" data-draft-tab="grid">Draft Grid</button></nav>
+        <section id="pick-panel" class="draft-panel"><section class="panel budget-panel"><span>YOUR BUDGET</span><strong id="budget-display">$1,000</strong><small id="budget-note">Use your draft budget to buy five players.</small></section><section class="panel players-panel"><div class="panel-heading"><div><p class="eyebrow">AVAILABLE PLAYERS</p><h2>Make your pick</h2></div><span id="available-count" class="count"></span></div><div class="filter-tabs"><button class="filter-tab active" data-filter="ALL">All</button><button class="filter-tab" data-filter="QB">QBs</button><button class="filter-tab" data-filter="WR">WRs</button><button class="filter-tab" data-filter="RB">RBs</button><button class="filter-tab" data-filter="TE">TEs</button><button class="filter-tab" data-filter="FLEX">Flex</button></div><div id="players" class="players"></div></section></section>
+        <section id="teams-panel" class="draft-panel" hidden><section class="panel"><div class="panel-heading"><div><p class="eyebrow">TEAMS SO FAR</p><h2>Current rosters</h2></div><span>Updates after every pick</span></div><div id="live-rosters" class="final-rosters"></div></section></section>
+        <section id="grid-panel" class="draft-panel" hidden><section class="panel board-panel"><div class="panel-heading"><div><p class="eyebrow">DRAFT BOARD</p><h2>Snake order</h2></div><span>Odd rounds: left → right · Even rounds: right → left</span></div><div id="draft-board" class="draft-board"></div></section></section>
+      </section>
+
+      <section id="complete-screen" class="complete-screen" hidden><p class="eyebrow">DRAFT COMPLETE</p><h1>Weekly teams</h1><p>Your entry is in. Game results will determine the final standings and coin payouts.</p><div class="payout-banner"><span>1st: 200 coins</span><span>2nd: 100 coins</span><span>3rd: 50 coins</span></div><div id="final-rosters" class="final-rosters"></div></section>
+      <footer>Demo backend uses in-memory data. Restarting the server resets the weekly draft and coin balance.</footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

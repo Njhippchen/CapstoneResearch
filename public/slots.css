@@ -1,0 +1,125 @@
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+#draft-screen[hidden],
+#complete-screen[hidden] {
+  display: none;
+}
+
+.draft-panel[hidden] { display: none; }
+.draft-tabs { border-bottom: 1px solid #29435f; display: flex; gap: 20px; margin: 8px 0 18px; }
+.draft-tab { background: transparent; border: 0; border-bottom: 3px solid transparent; color: #91a9c0; cursor: pointer; font: inherit; font-size: 13px; font-weight: 800; padding: 12px 4px; }
+.draft-tab.active { border-bottom-color: #00c98d; color: #f3fbff; }
+.draft-panel > .panel + .panel { margin-top: 18px; }
+
+.home-screen { padding: 44px 0 24px; }
+.home-lede { font-size: 17px; max-width: 680px; }
+.home-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 26px; }
+.home-card { background: #101e31; border: 1px solid #253d59; border-radius: 16px; min-height: 235px; padding: 22px; }
+.home-card h2 { color: #f5fbff; font-size: 28px; margin-top: 10px; }
+.payout-card { background: radial-gradient(circle at 85% 20%, #173e73, #101e31 55%); }
+.primary-button { background: #00c98d; border: 1px solid #65f2c8; border-radius: 8px; color: #062238; cursor: pointer; font-weight: 900; margin-top: 16px; padding: 11px 13px; }
+.primary-button:disabled { background: #23354a; border-color: #344b65; color: #7890aa; cursor: not-allowed; }
+.coin-display { background: #162e43; border: 1px solid #3a617b; border-radius: 999px; color: #ffd36c; font-size: 12px; font-weight: 800; margin-left: auto; padding: 8px 11px; }
+.payout-row { border-bottom: 1px solid #29435f; display: flex; justify-content: space-between; padding: 10px 0; }
+.payout-row span { color: #ffd36c; font-weight: 800; }
+.tiny-note { color: #91a9c0; font-size: 12px; }
+.budget-panel { align-items: center; display: flex; gap: 12px; margin-bottom: 18px; padding: 13px 18px; }
+.budget-panel > span { color: #84bcd8; font-size: 12px; font-weight: 800; }
+.budget-panel strong { color: #ffd36c; font-size: 23px; }
+.budget-panel small { color: #91a9c0; margin-left: auto; }
+.payout-banner { background: #122e40; border: 1px solid #2a5d6c; border-radius: 10px; color: #bdf6dd; display: flex; font-weight: 800; gap: 24px; margin: 16px 0 22px; padding: 13px 16px; }
+
+.filter-tab {
+  background: #112541;
+  border: 1px solid #294766;
+  border-radius: 999px;
+  color: #b8cbe0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 12px;
+}
+
+.filter-tab.active,
+.filter-tab:hover {
+  background: #00c98d;
+  border-color: #00c98d;
+  color: #062238;
+}
+
+.slot-list {
+  display: grid;
+  gap: 9px;
+}
+
+.slot-row {
+  align-items: center;
+  background: #102641;
+  border: 1px solid #21425f;
+  border-radius: 8px;
+  color: #dce8f4;
+  display: grid;
+  font-size: 13px;
+  gap: 10px;
+  grid-template-columns: 46px 1fr;
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+.slot-row b {
+  color: #00c98d;
+  font-size: 11px;
+}
+
+.slot-row small {
+  color: #91a9c0;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+.draft-intro {
+  align-items: stretch;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.7fr 1fr;
+  padding: 30px 0 18px;
+}
+
+.draft-intro > div:first-child {
+  background: radial-gradient(circle at 85% 20%, #173e73, #101e31 55%);
+  border: 1px solid #253d59;
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.draft-board {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  overflow-x: auto;
+}
+
+.snake-round { min-width: 960px; }
+.snake-round h3 { color: #cfe1f3; font-size: 13px; margin: 0 0 8px; }
+.snake-round h3 small { color: #91a9c0; font-size: 11px; font-weight: 500; margin-left: 8px; }
+.snake-row { display: flex; gap: 10px; }
+.snake-round.reverse .snake-row { flex-direction: row-reverse; }
+.snake-row .board-pick { flex: 1; margin: 0; min-width: 180px; }
+
+.complete-screen { padding: 34px 0 18px; }
+.final-rosters { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 22px; }
+.final-rosters .roster { border: 1px solid #29435f; border-left: 3px solid #3d5978; padding: 15px; }
+.final-rosters .your-roster { border-left-color: #4c9dff; }
+
+@media (max-width: 850px) {
+  .home-grid { grid-template-columns: 1fr; }
+  .coin-display { margin-left: 0; }
+  .draft-intro { grid-template-columns: 1fr; }
+  .snake-round { min-width: 940px; }
+}
